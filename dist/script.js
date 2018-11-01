@@ -1,6 +1,6 @@
 var pass = '';
 var locked = false;
-var inited = true; // 初始化
+var inited = false; // 初始化
 var data = [];
 var initdata = {};
 var counter = {};
