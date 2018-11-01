@@ -23,6 +23,19 @@
         .modal-footer{
             text-align: left;
         }
+        .row-upload {
+
+        }
+        #upload_btn {
+            margin-left: 15px;
+        }
+        #reset_btn {
+            
+        }
+        .button-clicked {
+            color: white;
+            background: red;
+        }
     </style>
 
     <script type="text/javascript" src="dist/jsQR.js"></script>
@@ -34,7 +47,6 @@
         }
     </script>
 </head>
-
 <body>
     <div class="container">
         <!--<div id="scanner"></div>-->
@@ -42,7 +54,7 @@
         <canvas id="canvas" style="display: none;"></canvas>
 
         <div class="row">
-            <button type="button" class="col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-6 col-md-6 col-md-offset-3 btn btn-info" id="info-btn" disabled="disabled">資訊</button>
+            <button type="button" class="col-sm-6 col-sm-offset-3 col-xs-offset-3 col-xs-6 col-md-6 col-md-offset-3 btn btn-info" id="info-btn" disabled="disabled">闖關進度</button>
         </div>
     </div>
     <!--動態視窗呈現-問題dialog-->
@@ -53,6 +65,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                     <h4 class="modal-title" id="question_box" data-name="title"></h4>
                 </div>
+                <!--第一題-->
                 <div class="modal-body">
                     <p data-name="context"></p>
                     
@@ -65,6 +78,20 @@
                         <button type="button" class="btn btn-default answer_button" data-name='D'>D</button>
                     </div>
                 </div>
+                <!--第二題-->
+                <div class="modal-body">
+                    <p data-name2="context"></p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default answer_button2" data-name2='A'>A</button>
+                        <button type="button" class="btn btn-default answer_button2" data-name2='B'>B</button>
+                        <button type="button" class="btn btn-default answer_button2" data-name2='C'>C</button>
+                        <button type="button" class="btn btn-default answer_button2" data-name2='D'>D</button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary col-md-6" id="submit_btn">送出</button>
             </div>
         </div>
     </div>
@@ -87,13 +114,51 @@
                             <td data-table="wrong_count"></td>
                         </tr>
                         <tr>
+                            <td>國際發明展</td>
+                            <td data-table="topic_0"></td>
+                        </tr>
+                        <tr>
+                            <td>創新創業</td>
+                            <td data-table="topic_1"></td>
+                        </tr>
+                        <tr>
+                            <td>YunTech工研院</td>
+                            <td data-table="topic_2"></td>
+                        </tr>
+                        <tr>
+                            <td>高階研發人才培育</td>
+                            <td data-table="topic_3"></td>
+                        </tr>
+                        <tr>
+                            <td>大學社會責任實踐計畫</td>
+                            <td data-table="topic_4"></td>
+                        </tr>
+                        <tr>
+                            <td>特色領域研究中心</td>
+                            <td data-table="topic_5"></td>
+                        </tr>
+                        <tr>
+                            <td>研究服務中心</td>
+                            <td data-table="topic_6"></td>
+                        </tr>
+                        <tr>
+                            <td>彰雲嘉大學校院聯盟</td>
+                            <td data-table="topic_7"></td>
+                        </tr>
+                        <tr>
+                            <td>學生專題</td>
+                            <td data-table="topic_8"></td>
+                        </tr>
+                        <tr>
                             <td>用戶名</td>
                             <td data-table="username"></td>
                         </tr>
                     </table>
                     <div class="row">
-                        <button type="button" class="btn btn-primary col-md-6" id="upload_btn">上傳</button>
-                        <button type="button" class="btn btn-link col-md-offset-3 col-md-3" id="reset_btn">重置</button>
+                        <div class="row-upload">
+                            <button type="button" class="btn btn-primary col-md-6" id="upload_btn">上傳</button>
+                            <button type="button" class="btn btn-link col-md-offset-3 col-md-3" id="reset_btn">重置</button>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
